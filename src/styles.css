@@ -1,0 +1,62 @@
+html, body, app-root {
+    display: block;
+    height: 100%;
+    background-image: url('img/grid.png');
+  }
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.node {
+    background-color: #000!important;
+    border: 1px solid #000;
+    border-radius: 0;
+
+}
+.node .title {
+
+    color:white;
+    background-image: linear-gradient(to right,#0022ff, #4b4b4b);
+    font-size:12px;
+
+}
+.node.hover {
+    background-color: #666!important;
+
+}
+.node.selected{
+    background-color: #222;
+    radius:0px;
+}
+.socket {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 0px;
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    vertical-align: middle;
+    background: #5aec18;
+    z-index: 2;
+    transform: rotate(45deg);
+
+}
+.socket.output {
+    margin-right: -4px;
+}
+.socket.input {
+    margin-left: -4px;
+}
+.connection {
+    overflow: visible!important;
+    position: absolute;
+    z-index: -1;
+    pointer-events: all;
+}
+.connection .main-path {
+    stroke-width: 2px;
+    stroke: black;
+}
+

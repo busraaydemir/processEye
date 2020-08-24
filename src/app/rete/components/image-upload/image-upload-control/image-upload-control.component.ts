@@ -6,17 +6,27 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./image-upload-control.component.css']
 })
 export class ImageUploadControlComponent implements OnInit {
-  @Input() imgValue;
+  @Input('imgValue') get imgValue(): string | ArrayBuffer {
+    return this._imgValue;
+  }
+  set imgValue(val: string | ArrayBuffer) {
+    this._imgValue = val;
+    this.update(this._imgValue);
+  }
+
   @Input() readonly: boolean;
-  @Input() mounted: Function;
   @Input() update: Function;
+
+  private _imgValue;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.mounted();
-    this.imgValue = 'https://nostrahomes.com.au/uploads/cms/unknown.jpg';
+    if (!this.imgValue) {
+      this.imgValue = `https://lh3.googleusercontent.com/proxy/oCePzMWtueYbhI2-2s2-DZIfO5HuF84q6wO3TkML2UL1gm8sHylWu4tvZXN2GCnrun5r4cxIbnyM_uoWiSXkmiWUGcalZWZPG0cZumZAi2oXZaj_mfBGUnCvBQtUNyo`;
+    }
   }
+
   readUrl(event: any) {
     if (event.target.files && event.target.files[0]) {
       let reader = new FileReader();

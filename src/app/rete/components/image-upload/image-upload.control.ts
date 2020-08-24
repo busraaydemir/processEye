@@ -14,29 +14,16 @@ export class ImageUploadControl extends Control implements AngularControl {
     this.component = ImageUploadControlComponent;
     this.props = {
       readonly,
-      change: event => this.onChange(event),
       value: '',
-      mounted: () => {
-        this.setValue((this.getData(key) as any) || 0);
+      update: (val) => {
+        this.setValue(val);
       }
     };
-
-  }
-
-  onChange(event) {
-    // const input = event.target;
-    // const reader = new FileReader();
-    // reader.onload = (event) => {
-    //   this.setValue(event.target.result);
-    //   this.emitter.trigger('process');
-    // };
-    // reader.readAsDataURL(input.files[0]);
   }
 
   setValue(val) {
     this.props.value = val;
     this.putData(this.key, this.props.value);
+    this.emitter.trigger('process');
   }
-
-
 }

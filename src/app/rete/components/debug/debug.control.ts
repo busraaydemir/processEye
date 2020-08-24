@@ -28,7 +28,6 @@ export class DebugControl extends Control implements AngularControl {
   }
 
   setValue(val: number) {
-    console.log(val);
     this.props.value = val;
     this.putData(this.key, this.props.value);
   }

@@ -40,7 +40,6 @@ export class ImageRoiControl extends Control implements AngularControl {
     }
 
     setValue(val) {
-        console.log(val);
         this.props.value = { x1: this.props.xMinValue, x2: this.props.xMaxValue, y1: this.props.yMinValue, y2: this.props.yMaxValue };
         this.putData(this.key, this.props.value);
     }

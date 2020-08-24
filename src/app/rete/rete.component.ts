@@ -11,10 +11,10 @@ import { AngularRenderPlugin } from "rete-angular-render-plugin";
 import ContextMenuPlugin from 'rete-context-menu-plugin';
 import AreaPlugin from 'rete-area-plugin';
 import HistoryPlugin from 'rete-history-plugin';
-import { NumNgComponent } from "./components/NgTestComponent";
+import { NumNgComponent } from "./components/ng-test/NgTestComponent";
 import { ImageUploadComponent } from "./components/ImageUploadComponent";
 import { DebugComponent } from "./components/DebugComponent";
-import { ImageViewerComponent } from "./components/ImageViewerComponent";
+import { ImageViewerComponent } from "./components/image-viewer/ImageViewerComponent";
 import { ImageRoiComponent } from './components/ImageRoiComponent';
 
 @Component({

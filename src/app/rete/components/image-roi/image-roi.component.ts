@@ -1,6 +1,6 @@
 import { Component, Input, Output } from 'rete';
-import { imageSocket, numSocket } from '../sockets';
-import { ImageRoiControl } from '../controls/image-roi/image-roi.component';
+import { imageSocket, numSocket } from '../../sockets';
+import { ImageRoiControl } from './image-roi.control';
 
 export class ImageRoiComponent extends Component {
     constructor() {

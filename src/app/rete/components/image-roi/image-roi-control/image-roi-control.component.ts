@@ -13,6 +13,8 @@ export class ImageRoiControlComponent implements OnInit, OnChanges {
 
   xMinValue = 0;
   xMaxValue = 0;
+  yMinValue;
+  yMaxValue: number;
 
   constructor() { }
 

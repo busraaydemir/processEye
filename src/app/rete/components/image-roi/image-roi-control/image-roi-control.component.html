@@ -1,24 +1,13 @@
 <p> Input Image Size (H, W) : </p>
 
-<label for="x-min">X_min:</label>
-<input type="range" class="custom-range" [(ngModel)]="xMinValue"
-    (ngModelChange)="modelChange($event)" id="x-min">
-<!-- 
-<label for="x-max">X_max: {{X_max}}</label>
-<input type="range" class="custom-range" [value]="xMaxValue"
-    (change)="change({id: $event.target.id, value: $event.target.value})" id="x-max">
+<label for="x-min">X_min: {{xMinValue}}</label>
+<input type="range" class="custom-range" [(ngModel)]="xMinValue" (ngModelChange)="modelChange($event)" id="x-min">
 
-<label for="y-min">Y_min: {{Y_min}}</label>
-<input type="range" class="custom-range" [value]="yMinValue"
-(change)="change({id: $event.target.id, value: $event.target.value})" id="y-min">
+<label for="x-max">X_max: {{xMaxValue}}</label>
+<input type="range" class="custom-range" [(ngModel)]="xMaxValue" (ngModelChange)="modelChange($event)" id="x-max">
 
-<label for="y-max">Y_max: {{Y_max}}</label>
-<input type="range" class="custom-range" [value]="yMaxValue"
-(change)="change({id: $event.target.id, value: $event.target.value})" id="y-max"> -->
+<label for="y-min">Y_min: {{yMinValue}}</label>
+<input type="range" class="custom-range" [(ngModel)]="yMinValue" (ngModelChange)="modelChange($event)" id="y-min">
 
-<!-- <input
-type="range"
-[value]="value"
-[readonly]="readonly"
-(change)="change($event.target.value)"
-/> -->
+<label for="y-max">Y_max: {{yMaxValue}}</label>
+<input type="range" class="custom-range" [(ngModel)]="yMaxValue" (ngModelChange)="modelChange($event)" id="y-max">

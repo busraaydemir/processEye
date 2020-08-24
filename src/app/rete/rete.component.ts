@@ -1,21 +1,20 @@
+import { Engine, NodeEditor } from 'rete';
+import { AngularRenderPlugin } from 'rete-angular-render-plugin';
+import AreaPlugin from 'rete-area-plugin';
+import ConnectionPathPlugin from 'rete-connection-path-plugin';
+import ConnectionPlugin from 'rete-connection-plugin';
+import ContextMenuPlugin from 'rete-context-menu-plugin';
+import HistoryPlugin from 'rete-history-plugin';
+
 import {
-  Component, AfterViewInit,
-  OnChanges, ViewChild,
-  ElementRef, Input, ViewEncapsulation
+  AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild, ViewEncapsulation
 } from '@angular/core';
 
-import { NodeEditor, Engine } from 'rete';
-import ConnectionPlugin from 'rete-connection-plugin';
-import ConnectionPathPlugin from 'rete-connection-path-plugin';
-import { AngularRenderPlugin } from "rete-angular-render-plugin";
-import ContextMenuPlugin from 'rete-context-menu-plugin';
-import AreaPlugin from 'rete-area-plugin';
-import HistoryPlugin from 'rete-history-plugin';
-import { NumNgComponent } from "./components/ng-test/NgTestComponent";
-import { ImageUploadComponent } from "./components/ImageUploadComponent";
-import { DebugComponent } from "./components/DebugComponent";
-import { ImageViewerComponent } from "./components/image-viewer/ImageViewerComponent";
-import { ImageRoiComponent } from './components/ImageRoiComponent';
+import { DebugComponent } from './components/debug/debug.component';
+import { ImageRoiComponent } from './components/image-roi/image-roi.component';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
+import { NumNgComponent } from './components/ng-test/ng-test.component';
 
 @Component({
   selector: 'app-rete',

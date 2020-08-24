@@ -22,6 +22,8 @@ export class ImageRoiControl extends Control implements AngularControl {
       readonly,
       change: v => this.onChange(v),
       value: 0,
+      value1: 10,
+      value2: 20,
       mounted: () => {
         this.setValue((this.getData(key) as any));
       }
@@ -29,29 +31,13 @@ export class ImageRoiControl extends Control implements AngularControl {
   }
 
   onChange(val) {
-    // for input
-    const input = val.target;
-    const img: HTMLElement = document.createElement('img');
-    img.setAttribute('src', input);
-    img.setAttribute('style', "height:149px;width:280px;");
 
-    const imagePosition = this.getImagePosition();
-    const width = imagePosition.x2 - imagePosition.x1;
-    const height = imagePosition.y2 - imagePosition.y1;
-    
-    const output: ImageCroppedEvent = {
-      width: img.offsetWidth,
-      height: img.offsetHeight,
-      imagePosition,
-      cropperPosition: { ...this.cropper }
-    };
-    // console.log(input);
-    // const reader = new FileReader();
-    // reader.onload = (event) => {
-    //   this.setValue(event.target.result);
-    //   this.emitter.trigger('process');
-    // }
-    // reader.readAsDataURL(input.files[0]);
+    // for input
+    // const input = val.target;
+    // const img: HTMLElement = document.createElement('img');
+    // img.setAttribute('src', input);
+    // img.setAttribute('style', "height:149px;width:280px;");
+
     console.log(val);
 
     // for output
@@ -77,7 +63,7 @@ export class ImageRoiControlComponent implements OnInit {
   @Input() readonly: boolean;
   @Input() mounted: Function;
   @Input() update: Function;
-
+  value1; value2;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,24 +1,17 @@
 <p> Input Image Size (H, W) : </p>
 
-<label for="x-min">X_min: {{value}}</label>
+<label for="x-min">X_min: {{xMinValue}}</label>
 <input type="range" class="custom-range" [value]="xMinValue"
     (change)="change({id: $event.target.id, value: $event.target.value})" id="x-min">
 
-<label for="x-max">X_max: {{X_max}}</label>
+<label for="x-max">X_max: {{xMaxValue}}</label>
 <input type="range" class="custom-range" [value]="xMaxValue"
     (change)="change({id: $event.target.id, value: $event.target.value})" id="x-max">
 
-<label for="y-min">Y_min: {{Y_min}}</label>
+<label for="y-min">Y_min: {{yMinValue}}</label>
 <input type="range" class="custom-range" [value]="yMinValue"
-(change)="change({id: $event.target.id, value: $event.target.value})" id="y-min">
+    (change)="change({id: $event.target.id, value: $event.target.value})" id="y-min">
 
-<label for="y-max">Y_max: {{Y_max}}</label>
+<label for="y-max">Y_max: {{yMaxValue}}</label>
 <input type="range" class="custom-range" [value]="yMaxValue"
-(change)="change({id: $event.target.id, value: $event.target.value})" id="y-max">
-
-<!-- <input
-type="range"
-[value]="value"
-[readonly]="readonly"
-(change)="change($event.target.value)"
-/> -->
+    (change)="change({id: $event.target.id, value: $event.target.value})" id="y-max">

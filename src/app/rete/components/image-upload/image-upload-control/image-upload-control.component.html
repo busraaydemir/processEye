@@ -1,2 +1,2 @@
-<div> <input type="file" [readonly]="readonly" accept="image/*" /> </div>
-<img src="{{value}}" #ImageBase64 height="150" width="150" />
+<div> <input type="file" (change)="readUrl($event)" /> </div>
+<img src="{{imgValue}}" #ImageBase64 height="150" width="150" />

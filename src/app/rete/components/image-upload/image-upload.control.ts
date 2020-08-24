@@ -24,13 +24,13 @@ export class ImageUploadControl extends Control implements AngularControl {
   }
 
   onChange(event) {
-    const input = event.target;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      this.setValue(event.target.result);
-      this.emitter.trigger('process');
-    };
-    reader.readAsDataURL(input.files[0]);
+    // const input = event.target;
+    // const reader = new FileReader();
+    // reader.onload = (event) => {
+    //   this.setValue(event.target.result);
+    //   this.emitter.trigger('process');
+    // };
+    // reader.readAsDataURL(input.files[0]);
   }
 
   setValue(val) {

@@ -1,7 +1,7 @@
 import { Component, Input, Output } from 'rete';
-import { imageSocket } from '../sockets';
-import { ImageViewerControl } from "../controls/ImageViewerControl";
-import { DebugControl } from "../controls/DebugControl";
+import { imageSocket } from '../../sockets';
+import { ImageViewerControl } from "./ImageViewerControl";
+import { DebugControl } from "../debug/DebugControl";
 
 export class ImageViewerComponent extends Component {
     constructor() {

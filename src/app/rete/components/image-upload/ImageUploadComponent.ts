@@ -1,6 +1,6 @@
 import { Component, Input, Output } from 'rete';
-import {imageSocket} from '../sockets';
-import { ImageUploadControl } from "../controls/ImageUploadControl";
+import {imageSocket} from '../../sockets';
+import { ImageUploadControl } from './ImageUploadControl';
 
 export class ImageUploadComponent extends Component {
     constructor() {

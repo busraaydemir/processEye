@@ -1,6 +1,6 @@
 import { Component, Output } from "rete";
-import {anyTypeSocket, imageSocket, numSocket} from "../sockets";
-import { NgNumControl } from "../controls/NgTestControl";
+import {anyTypeSocket, imageSocket, numSocket} from "../../sockets";
+import { NgNumControl } from "./NgTestControl";
 
 export class NumNgComponent extends Component {
     constructor() {

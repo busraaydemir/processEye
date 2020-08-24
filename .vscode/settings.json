@@ -1,0 +1,28 @@
+{
+  "editor.tabSize": 2,
+  "editor.wrappingIndent": "same",
+  "editor.autoIndent": "full",
+  "editor.detectIndentation": true,
+  "editor.foldingStrategy": "auto",
+  "editor.highlightActiveIndentGuide": true,
+  "editor.insertSpaces": true,
+  "editor.renderWhiteSpaces": "all",
+  "editor.renderIndentGuides": true,
+  "workbench.tree.indent": 8,
+  "editor.trimAutoWhitespace": true,
+  "editor.useTabStops": true,
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+  "files.eol": "\r\n",
+  "files.insertFinalNewline": true,
+  "typescript.preferences.quoteStyle": "single",
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.formatOnSave": true
+}

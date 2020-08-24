@@ -1,15 +1,13 @@
 import { Control } from "rete";
 import { AngularControl } from "rete-angular-render-plugin";
 import { Type,Component, Input } from "@angular/core";
-import {NumberNgControl} from "./NgTestControl";
+import {NumberNgControl} from "../ng-test/NgTestControl";
 
 @Component({
     template: `        
       <div> <input
       type="file"
-      [readonly]="readonly"
-      (change)="change($event)"
-      
+      [readonly]="readonly"      
          accept="image/*" /> </div>
         <img  src="{{value}}"  #ImageBase64 height="150" width="150" />
   `,

@@ -1,6 +1,6 @@
-import { Component, OnInit, Type, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Type, Input, OnChanges, Output, ChangeDetectorRef, ChangeDetectionStrategy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Control } from 'rete';
-import { AngularControl } from 'rete-angular-render-plugin';
+import { AngularControl, NodeService, NodeComponent, AngularRenderPlugin } from 'rete-angular-render-plugin';
 import { ImageCroppedEvent } from '../../interfaces/image-roi-event.interface';
 import { CropperPosition } from '../../interfaces/cropper-position.interface';
 import { threadId } from 'worker_threads';
@@ -23,10 +23,6 @@ export class ImageRoiControl extends Control implements AngularControl {
     // tslint:disable-next-line: no-use-before-declare
     this.component = ImageRoiControlComponent;
     this.props = {
-      xMinValue: 50,
-      xMaxValue: 50,
-      yMinValue: 50,
-      yMaxValue: 50,
       readonly,
       change: v => this.onChange(v),
       value: 0,
@@ -42,14 +38,14 @@ export class ImageRoiControl extends Control implements AngularControl {
     if (val.id === 'x-max') { this.props.xMaxValue = val.value; }
     if (val.id === 'y-min') { this.props.yMinValue = val.value; }
     if (val.id === 'y-max') { this.props.yMaxValue = val.value; }
-
+    console.log(this.props.xMinValue);
     // const input = val.target;
     // const img: HTMLElement = document.createElement('img');
     // img.setAttribute('src', input);
     // img.setAttribute('style', "height:149px;width:280px;");
 
     // const imagePosition = this.getImagePosition();
-    // const width = imagePosition.x2 - imagePosition.x1;
+    // const width = this.props.xMaxValue - this.props.xMinValue;
     // const height = imagePosition.y2 - imagePosition.y1;
 
     // const output: ImageCroppedEvent = {
@@ -73,22 +69,20 @@ export class ImageRoiControl extends Control implements AngularControl {
   }
 
   setValue(val) {
-    console.log(val);
-    this.props.value = val;
-    this.putData(this.key, this.props.value);
-  }
-
-  getImagePosition() {
-    return { x1: 0, x2: 0, y1: 0, y2: 0 };
+    // console.log(val);
+    // this.props.value = val;
+    // this.putData(this.key, this.props.value);
   }
 }
 
 @Component({
   selector: 'app-image-roi',
   templateUrl: './image-roi.component.html',
-  styleUrls: ['./image-roi.component.css']
+  styleUrls: ['./image-roi.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
+  providers: [NodeService]
 })
-export class ImageRoiControlComponent implements OnInit {
+export class ImageRoiControlComponent extends NodeComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() value: string;
   @Input() readonly: boolean;
   @Input() mounted: Function;
@@ -97,14 +91,28 @@ export class ImageRoiControlComponent implements OnInit {
   xMinValue = 0;
   xMaxValue = 0;
 
-  constructor() { }
+  constructor(protected service: NodeService,
+    protected cdr: ChangeDetectorRef) {
+    super(service, cdr);
+  }
+
+
+  async ngAfterViewInit() {
+    this.editor.use(AngularRenderPlugin, { component: ImageRoiControlComponent });
+  }
 
   ngOnInit(): void {
+    console.log('onitni');
     this.mounted();
     this.value = 'https://nostrahomes.com.au/uploads/cms/unknown.jpg';
   }
 
-  modelChange(event) {
+  ngOnChanges(change) {
+    console.log('change');
+    console.log(change);
+  }
+
+  ngChange(event) {
     console.log(event);
   }
 }
